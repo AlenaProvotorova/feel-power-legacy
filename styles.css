@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe8;
+  --paper: #fffdfa;
+  --text: #201914;
+  --muted: #6d5d52;
+  --accent: #b86f2e;
+  --accent-soft: #efe0d1;
+  --border: #dfcfbf;
+  --shadow: 0 20px 45px rgba(50, 28, 10, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, #fff7ef 0, transparent 36%),
+    linear-gradient(180deg, #f6f0e8 0%, #efe7dc 100%);
+  color: var(--text);
+}
+
+.page {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.hero,
+.legal-header,
+.card,
+.legal-section {
+  background: color-mix(in srgb, var(--paper) 92%, white 8%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero,
+.legal-header {
+  border-radius: 32px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1;
+}
+
+.lead,
+.meta,
+.legal-section p,
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 24px;
+  padding: 24px;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.card h2,
+.legal-section h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.legal-page .legal-section {
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: min(100% - 24px, 920px);
+    padding: 24px 0 40px;
+  }
+
+  .hero,
+  .legal-header,
+  .legal-page .legal-section,
+  .card {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .lead,
+  .meta,
+  .legal-section p,
+  .card p {
+    font-size: 16px;
+  }
+
+  .card h2,
+  .legal-section h2 {
+    font-size: 22px;
+  }
+}
